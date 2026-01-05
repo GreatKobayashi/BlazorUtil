@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BlazorUtil/BlazorUtil.csproj" />
+  <Project Path="Test/Test.csproj" Id="7cc7ecab-db21-4d01-b56c-b01a42509bec" />
+</Solution>
