@@ -55,8 +55,12 @@ export function changeItemSelection(id, index, behavior) {
     if (target) {
         target.latestIndex = index;
         const scrollContainer = document.getElementById(id);
-        onElementVisible(scrollContainer, () => {
+        if (scrollContainer.offsetHeight > 0) {
             performChangeItemSelection(id, latestIndexes.find(x => x.id === id).latestIndex, behavior);
-        });
+        } else {
+            onElementVisible(scrollContainer, () => {
+                performChangeItemSelection(id, latestIndexes.find(x => x.id === id).latestIndex, behavior);
+            });
+        }
     }
 }
